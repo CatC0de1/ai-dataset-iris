@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "/deploy_model_using_flask/deploy.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+      { "src": "/deploy_model_using_flask/(.*)", "dest": "/deploy_model_using_flask/deploy.py" }
+    ]
+}
