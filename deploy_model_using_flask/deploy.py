@@ -3,7 +3,7 @@ import pickle
 
 app = Flask(__name__)
 # load the model
-model = pickle.load(open('savedmodel.sav', 'rb'))
+model = pickle.load(open('deploy_model_using_flask/savedmodel.sav', 'rb'))
 
 @app.route('/')
 def home():
@@ -20,5 +20,5 @@ def predict():
     result = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])[0]
     return render_template('index.html', **locals())
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
